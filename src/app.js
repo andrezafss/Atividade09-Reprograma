@@ -5,6 +5,7 @@ const app = express()
 //rotas
 const index = require("./routes/index")
 const colaboradores = require("./routes/colaboradoresRoute")
+const livros = require("./routes/livrosRoute");
 
 app.use(express.json());
 
@@ -19,5 +20,6 @@ app.use(function (req, res, next) {
 
 app.use("/", index)
 app.use("/colaboradores", colaboradores)
+app.use("/livros", livros)
 
 module.exports = app

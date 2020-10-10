@@ -2,12 +2,12 @@
 const colaboradores = require("../model/colaboradores.json");
 const fs = require("fs");
 
-const getAll = (req, res) => {
+const getAllColaborador = (req, res) => {
   console.log(req.url);
   res.status(200).send(colaboradores);
 };
 
-const getById = (req, res) => {
+const getByIdColaborador = (req, res) => {
   const id = req.params.id;
 
   res.status(201).send(colaboradores.find((colaborador) => colaborador.id == id));
@@ -46,8 +46,8 @@ const deleteColaborador = (req, res) => {
 }
 
 module.exports = {
-  getAll,
-  getById,
+  getAllColaborador,
+  getByIdColaborador,
   postColaborador,
   deleteColaborador
 };
